@@ -1,39 +1,43 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/custom/logo";
+import { cn } from "@/lib/utils";
+import { fontBrand } from "./layout";
+import { Hero } from "@/components/custom/hero";
+import { Merchandise } from "@/components/custom/merchandise";
+import { Game } from "@/components/custom/game";
+import { Episode } from "@/components/custom/episode";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#fff7f0]">
       <header className="flex items-center justify-between bg-[#ff6b6b] px-6 py-4 md:px-12">
         <Link href="#" prefetch={false}>
-          <Logo className="h-12 w-24 fill-[#fff7f0] stroke-[#ffd166]" />
-          {/* <img
-            src="/placeholder.svg"
-            alt="Peppa Pig"
-            width={150}
-            height={50}
-            style={{ aspectRatio: "150/50", objectFit: "cover" }}
-          /> */}
+          <Logo
+            className={cn(
+              "h-12 w-24 fill-[#fff7f0] stroke-[#ffd166]",
+              fontBrand.className,
+            )}
+          />
         </Link>
         <nav className="hidden items-center space-x-6 text-4xl md:flex">
           <Link
             href="#"
-            className="text-white transition-colors hover:text-[#ffd166]"
+            className="text-white transition-colors hover:text-[#ffd166] active:text-[#ffd166]"
             prefetch={false}
           >
             Episódios
           </Link>
           <Link
             href="#"
-            className="text-white transition-colors hover:text-[#ffd166]"
+            className="text-white transition-colors hover:text-[#ffd166] active:text-[#ffd166]"
             prefetch={false}
           >
             Jogos
           </Link>
           <Link
             href="#"
-            className="text-white transition-colors hover:text-[#ffd166]"
+            className="text-white transition-colors hover:text-[#ffd166] active:text-[#ffd166]"
             prefetch={false}
           >
             Mercadorias
@@ -41,46 +45,13 @@ export default function Home() {
         </nav>
         <Button
           variant="outline"
-          className="bg-white text-[#ff6b6b] transition-colors hover:bg-[#ffd166] hover:text-white md:hidden"
+          className="bg-white text-[#ff6b6b] transition-colors hover:bg-[#ffd166] hover:text-white active:bg-[#ffd166] active:text-white md:hidden"
         >
           Menu
         </Button>
       </header>
       <main>
-        <section className="flex flex-col items-center justify-between bg-[#ff6b6b] px-6 py-12 md:flex-row md:px-2 md:py-24 min-[800px]:px-[max((100%_-_70rem)/2,_3rem)]">
-          <div className="max-w-md space-y-4">
-            <h1 className="text-4xl font-bold text-white md:text-6xl">
-              Bem-vindo ao Mundo da Peppa Pig!
-            </h1>
-            <p className="text-lg text-white md:text-xl">
-              Junte-se a Peppa, George e seus amigos em emocionantes aventuras.
-            </p>
-            <div className="flex space-x-4">
-              <Link
-                href="#"
-                className="whitespace-nowrap rounded-full bg-white px-6 py-3 text-[#ff6b6b] transition-colors hover:bg-[#ffd166] hover:text-white"
-                prefetch={false}
-              >
-                Assistir Episódios
-              </Link>
-              <Link
-                href="#"
-                className="whitespace-nowrap rounded-full bg-[#ffd166] px-6 py-3 text-[#ff6b6b] transition-colors hover:bg-white hover:text-[#ff6b6b]"
-                prefetch={false}
-              >
-                Jogar Jogos
-              </Link>
-            </div>
-          </div>
-          <img
-            src="/placeholder.svg"
-            alt="Peppa Pig"
-            width={400}
-            height={400}
-            className="mt-8 animate-bounce md:mt-0"
-            style={{ aspectRatio: "400/400", objectFit: "cover" }}
-          />
-        </section>
+        <Hero />
         <section className="bg-[#ffd166] px-6 py-12 md:px-12 md:py-24">
           <div className="mx-auto max-w-xl space-y-4 text-center lg:max-w-5xl">
             <h2 className="text-3xl font-bold text-[#ff6b6b] md:text-5xl">
@@ -90,11 +61,7 @@ export default function Home() {
               Assista Peppa e seus amigos em emocionantes aventuras.
             </p>
             <div className="grid gap-4 xs:grid-cols-2 lg:grid-cols-4">
-              <Link
-                href="#"
-                className="overflow-hidden rounded-lg bg-white transition-transform hover:scale-110"
-                prefetch={false}
-              >
+              <Episode>
                 <img
                   src="/placeholder.svg"
                   alt="Episódio 1"
@@ -113,12 +80,8 @@ export default function Home() {
                     Peppa e seus amigos adoram pular em poças de lama.
                   </p>
                 </div>
-              </Link>
-              <Link
-                href="#"
-                className="overflow-hidden rounded-lg bg-white transition-transform hover:scale-110"
-                prefetch={false}
-              >
+              </Episode>
+              <Episode>
                 <img
                   src="/placeholder.svg"
                   alt="Episódio 2"
@@ -137,12 +100,8 @@ export default function Home() {
                     Peppa e sua família vão a um piquenique no campo.
                   </p>
                 </div>
-              </Link>
-              <Link
-                href="#"
-                className="overflow-hidden rounded-lg bg-white transition-transform hover:scale-110"
-                prefetch={false}
-              >
+              </Episode>
+              <Episode>
                 <img
                   src="/placeholder.svg"
                   alt="Episódio 3"
@@ -162,12 +121,8 @@ export default function Home() {
                     Suzy Ovelha.
                   </p>
                 </div>
-              </Link>
-              <Link
-                href="#"
-                className="overflow-hidden rounded-lg bg-white transition-transform hover:scale-110"
-                prefetch={false}
-              >
+              </Episode>
+              <Episode>
                 <img
                   src="/placeholder.svg"
                   alt="Episódio 4"
@@ -186,7 +141,7 @@ export default function Home() {
                     Peppa e sua família visitam o dentista.
                   </p>
                 </div>
-              </Link>
+              </Episode>
             </div>
           </div>
         </section>
@@ -196,11 +151,10 @@ export default function Home() {
             <p className="text-lg text-white md:text-xl">
               Jogue jogos divertidos e interativos com Peppa e seus amigos.
             </p>
-            <div className="grid gap-4 xs:grid-cols-2 lg:grid-cols-4">
-              <Link
-                href="#"
-                className="origin-bottom-right overflow-hidden rounded-lg bg-white transition-transform hover:-rotate-6"
-                prefetch={false}
+            <div className="grid gap-8 px-4 xs:grid-cols-2 xs:gap-4 xs:px-0 lg:grid-cols-4">
+              <Game
+                activeClassName="-rotate-3 xs:-rotate-6"
+                className="origin-bottom-right lg:hover:-rotate-6"
               >
                 <img
                   src="/placeholder.svg"
@@ -218,11 +172,10 @@ export default function Home() {
                     Ajude Peppa a pular sobre as poças de lama.
                   </p>
                 </div>
-              </Link>
-              <Link
-                href="#"
-                className="origin-bottom-right overflow-hidden rounded-lg bg-white transition-transform hover:-rotate-3"
-                prefetch={false}
+              </Game>
+              <Game
+                activeClassName="rotate-3 xs:rotate-6"
+                className="origin-bottom-left lg:origin-bottom-right lg:hover:-rotate-3"
               >
                 <img
                   src="/placeholder.svg"
@@ -240,11 +193,10 @@ export default function Home() {
                     Ajude Peppa e seus amigos a preparar o piquenique perfeito.
                   </p>
                 </div>
-              </Link>
-              <Link
-                href="#"
-                className="origin-bottom-left overflow-hidden rounded-lg bg-white transition-transform hover:rotate-3"
-                prefetch={false}
+              </Game>
+              <Game
+                activeClassName="-rotate-3 xs:-rotate-6"
+                className="origin-bottom-right lg:origin-bottom-left lg:hover:rotate-3"
               >
                 <img
                   src="/placeholder.svg"
@@ -262,11 +214,10 @@ export default function Home() {
                     Ajude Peppa e seus amigos a ter a melhor festa do pijama.
                   </p>
                 </div>
-              </Link>
-              <Link
-                href="#"
-                className="origin-bottom-left overflow-hidden rounded-lg bg-white transition-transform hover:rotate-6"
-                prefetch={false}
+              </Game>
+              <Game
+                activeClassName="rotate-3 xs:rotate-6"
+                className="origin-bottom-left lg:hover:rotate-6"
               >
                 <img
                   src="/placeholder.svg"
@@ -284,7 +235,7 @@ export default function Home() {
                     Ajude Peppa e sua família a visitar o dentista.
                   </p>
                 </div>
-              </Link>
+              </Game>
             </div>
           </div>
         </section>
@@ -297,11 +248,7 @@ export default function Home() {
               Traga para casa seus personagens favoritos da Peppa Pig.
             </p>
             <div className="grid gap-4 xs:grid-cols-2 lg:grid-cols-4">
-              <Link
-                href="#"
-                className="-translate-y-3 skew-x-2 skew-y-6 overflow-hidden rounded-lg bg-white opacity-90 transition-transform hover:z-10 hover:skew-x-0 hover:skew-y-0 hover:scale-150 hover:opacity-100"
-                prefetch={false}
-              >
+              <Merchandise className="lg:-translate-y-3 lg:skew-x-2 lg:skew-y-6">
                 <img
                   src="/placeholder.svg"
                   alt="Mercadoria 1"
@@ -318,12 +265,8 @@ export default function Home() {
                     Boneco de pelúcia fofo da Peppa Pig.
                   </p>
                 </div>
-              </Link>
-              <Link
-                href="#"
-                className="translate-y-2 skew-x-1 skew-y-2 overflow-hidden rounded-lg bg-white opacity-90 transition-transform hover:z-10 hover:skew-x-0 hover:skew-y-0 hover:scale-150 hover:opacity-100"
-                prefetch={false}
-              >
+              </Merchandise>
+              <Merchandise className="lg:translate-y-2 lg:skew-x-1 lg:skew-y-2">
                 <img
                   src="/placeholder.svg"
                   alt="Mercadoria 2"
@@ -340,12 +283,8 @@ export default function Home() {
                     Mochila com tema da Peppa Pig para a escola.
                   </p>
                 </div>
-              </Link>
-              <Link
-                href="#"
-                className="translate-y-2 -skew-x-1 -skew-y-2 overflow-hidden rounded-lg bg-white opacity-90 transition-transform hover:z-10 hover:skew-x-0 hover:skew-y-0 hover:scale-150 hover:opacity-100"
-                prefetch={false}
-              >
+              </Merchandise>
+              <Merchandise className="lg:translate-y-2 lg:-skew-x-1 lg:-skew-y-2">
                 <img
                   src="/placeholder.svg"
                   alt="Mercadoria 3"
@@ -362,12 +301,8 @@ export default function Home() {
                     Camiseta confortável com tema da Peppa Pig.
                   </p>
                 </div>
-              </Link>
-              <Link
-                href="#"
-                className="-translate-y-3 -skew-x-2 -skew-y-6 overflow-hidden rounded-lg bg-white opacity-90 transition-transform hover:z-10 hover:skew-x-0 hover:skew-y-0 hover:scale-150 hover:opacity-100"
-                prefetch={false}
-              >
+              </Merchandise>
+              <Merchandise className="lg:-translate-y-3 lg:-skew-x-2 lg:-skew-y-6">
                 <img
                   src="/placeholder.svg"
                   alt="Mercadoria 4"
@@ -384,7 +319,7 @@ export default function Home() {
                     Caneca com tema da Peppa Pig para seu café da manhã.
                   </p>
                 </div>
-              </Link>
+              </Merchandise>
             </div>
           </div>
         </section>

@@ -1,21 +1,34 @@
+"use client";
+
+import { useWide } from "@/lib/contexts/wideContext";
+import { useTarget } from "@/lib/hooks/useTarget";
 import { cn } from "@/lib/utils";
-import { SVGAttributes } from "react";
+import { SVGAttributes, useCallback, useRef } from "react";
 
 interface Props extends SVGAttributes<SVGSVGElement> {}
 
 export function Logo({ className, ...props }: Props) {
+  const isWide = useWide();
+  const { ref, on: touch } = useTarget("touchstart");
+
   return (
     <svg
+      ref={ref}
       viewBox="0 17.5 76 40.85"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       version="1.1"
       baseProfile="full"
-      enable-background="new 0 0 40.85 40.85"
+      enableBackground="new 0 0 40.85 40.85"
       xmlSpace="preserve"
       fill="#000000"
       className={cn(
-        "stroke-black stroke-2 transition-all duration-500 ease-in [stroke-dasharray:190] [stroke-dashoffset:190] [stroke-linecap:round] [stroke-linejoin:round] hover:[stroke-dashoffset:0]",
+        "[stroke-linejoin:round stroke-black stroke-2 transition-all duration-500 ease-in [stroke-dasharray:190] [stroke-linecap:round]",
+        {
+          "[stroke-dashoffset:190]": !touch || isWide,
+          "[stroke-dashoffset:0]": touch,
+          "hover:[stroke-dashoffset:0]": isWide,
+        },
         className,
       )}
       {...props}
