@@ -10,10 +10,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { HTMLAttributes, useState } from "react";
 import { cn } from "@/lib/utils";
+import { VC } from "@/lib/types";
 
-interface Props extends HTMLAttributes<HTMLElement> {
-  variantClassName?: string;
-}
+interface Props extends VC<HTMLAttributes<HTMLElement>> {}
 
 export function Nav({ className, variantClassName, ...props }: Props) {
   const isMedium = useBreakpoint("md", false);

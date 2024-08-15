@@ -2,7 +2,7 @@
 
 import { useWide } from "@/lib/contexts/wideContext";
 import { useTarget } from "@/lib/hooks/useTarget";
-import { cn } from "@/lib/utils";
+import { clickJogos, cn, googleNetflix } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { HTMLAttributes } from "react";
@@ -30,14 +30,16 @@ export function Hero({ className, ...props }: Props) {
         </p>
         <div className="flex space-x-4">
           <Link
-            href="#"
+            href={googleNetflix("peppa pig")}
+            target="_blank"
             className="whitespace-nowrap rounded-full bg-white px-6 py-3 text-[#ff6b6b] transition-colors hover:bg-[#ffd166] hover:text-white active:bg-[#ffd166] active:text-white"
             prefetch={false}
           >
             Assistir Episódios
           </Link>
           <Link
-            href="#"
+            href={clickJogos("peppa pig")}
+            target="_blank"
             className="whitespace-nowrap rounded-full bg-[#ffd166] px-6 py-3 text-[#ff6b6b] transition-colors hover:bg-white hover:text-[#ff6b6b] active:bg-white active:text-[#ff6b6b]"
             prefetch={false}
           >

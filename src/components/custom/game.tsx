@@ -1,13 +1,13 @@
 "use client";
 
 import { useTarget } from "@/lib/hooks/useTarget";
+import { VC } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { AnchorHTMLAttributes, useEffect, useState } from "react";
 
-interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  variantClassName?: string;
-}
+interface Props extends VC<AnchorHTMLAttributes<HTMLAnchorElement>> {}
+
 export function Game({
   className,
   variantClassName = "",
