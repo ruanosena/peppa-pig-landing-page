@@ -1,13 +1,17 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/custom/logo";
 import { cn } from "@/lib/utils";
-import { fontBrand } from "./layout";
 import { Hero } from "@/components/custom/hero";
 import { Merchandise } from "@/components/custom/merchandise";
 import { Game } from "@/components/custom/game";
 import { Episode } from "@/components/custom/episode";
 import { Nav } from "@/components/custom/nav";
+import localFont from "next/font/local";
+
+const fontBrand = localFont({
+  src: "./Peppa Pig.ttf",
+  display: "swap",
+});
 
 export default function Home() {
   return (
