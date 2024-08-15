@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import { WideContextProvider } from "@/lib/contexts/wideContext";
+import { BackToTop } from "@/components/custom/backToTop";
 
 const fontHeading = Inter({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({
           )}
         >
           {children}
+          <BackToTop />
         </body>
       </WideContextProvider>
     </html>
