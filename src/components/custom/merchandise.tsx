@@ -7,11 +7,11 @@ import Link from "next/link";
 import { AnchorHTMLAttributes, useEffect, useState } from "react";
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  activeClassName?: string;
+  variantClassName?: string;
 }
 export function Merchandise({
   className,
-  activeClassName,
+  variantClassName,
   children,
   ...props
 }: Props) {
@@ -34,7 +34,7 @@ export function Merchandise({
             isWide,
           [cn(
             "animate-[wiggle_0.45s_ease-in-out_2] opacity-100 xs:z-10 xs:scale-[1.20]",
-            activeClassName,
+            variantClassName,
           )]: touch,
         },
         className,

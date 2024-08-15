@@ -7,11 +7,11 @@ import Link from "next/link";
 import { AnchorHTMLAttributes, useEffect, useState } from "react";
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  activeClassName?: string;
+  variantClassName?: string;
 }
 export function Episode({
   className,
-  activeClassName,
+  variantClassName,
   children,
   ...props
 }: Props) {
@@ -31,7 +31,7 @@ export function Episode({
         "overflow-hidden rounded-lg bg-white transition-transform",
         {
           "hover:scale-110": isWide,
-          [cn("animate-beat", activeClassName)]: touch,
+          [cn("animate-beat", variantClassName)]: touch,
         },
         className,
       )}

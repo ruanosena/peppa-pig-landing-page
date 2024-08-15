@@ -7,6 +7,7 @@ import { Hero } from "@/components/custom/hero";
 import { Merchandise } from "@/components/custom/merchandise";
 import { Game } from "@/components/custom/game";
 import { Episode } from "@/components/custom/episode";
+import { Nav } from "@/components/custom/nav";
 
 export default function Home() {
   return (
@@ -20,38 +21,12 @@ export default function Home() {
             )}
           />
         </Link>
-        <nav className="hidden items-center space-x-6 text-4xl md:flex">
-          <Link
-            href="#Episodios"
-            className="text-white transition-colors hover:text-[#ffd166] active:text-[#ffd166]"
-            prefetch={false}
-          >
-            Episódios
-          </Link>
-          <Link
-            href="#Jogos"
-            className="text-white transition-colors hover:text-[#ffd166] active:text-[#ffd166]"
-            prefetch={false}
-          >
-            Jogos
-          </Link>
-          <Link
-            href="#Mercadorias"
-            className="text-white transition-colors hover:text-[#ffd166] active:text-[#ffd166]"
-            prefetch={false}
-          >
-            Mercadorias
-          </Link>
-        </nav>
-        <Button
-          variant="outline"
-          className="bg-white text-[#ff6b6b] transition-colors hover:bg-[#ffd166] hover:text-white active:bg-[#ffd166] active:text-white md:hidden"
-        >
-          Menu
-        </Button>
+
+        <Nav />
       </header>
       <main>
         <Hero />
+
         <section
           id="Episodios"
           className="bg-[#ffd166] px-6 py-12 md:px-12 md:py-24"
@@ -159,7 +134,7 @@ export default function Home() {
             </p>
             <div className="grid gap-8 px-4 xs:grid-cols-2 xs:gap-4 xs:px-0 lg:grid-cols-4">
               <Game
-                activeClassName="-rotate-3 xs:-rotate-6"
+                variantClassName="-rotate-3 xs:-rotate-6"
                 className="origin-bottom-right lg:hover:-rotate-6"
               >
                 <img
@@ -180,7 +155,7 @@ export default function Home() {
                 </div>
               </Game>
               <Game
-                activeClassName="rotate-3 xs:rotate-6"
+                variantClassName="rotate-3 xs:rotate-6"
                 className="origin-bottom-left lg:origin-bottom-right lg:hover:-rotate-3"
               >
                 <img
@@ -201,7 +176,7 @@ export default function Home() {
                 </div>
               </Game>
               <Game
-                activeClassName="-rotate-3 xs:-rotate-6"
+                variantClassName="-rotate-3 xs:-rotate-6"
                 className="origin-bottom-right lg:origin-bottom-left lg:hover:rotate-3"
               >
                 <img
@@ -222,7 +197,7 @@ export default function Home() {
                 </div>
               </Game>
               <Game
-                activeClassName="rotate-3 xs:rotate-6"
+                variantClassName="rotate-3 xs:rotate-6"
                 className="origin-bottom-left lg:hover:rotate-6"
               >
                 <img
