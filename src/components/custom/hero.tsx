@@ -47,7 +47,7 @@ export function Hero({ className, ...props }: Props) {
       </div>
       <Image
         ref={ref}
-        src="/placeholder.svg"
+        src="/peppa-pig.jpg"
         alt="Peppa Pig"
         width={400}
         height={400}

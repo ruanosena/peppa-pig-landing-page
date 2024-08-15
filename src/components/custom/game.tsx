@@ -15,7 +15,7 @@ export function Game({
   ...props
 }: Props) {
   const [prevented, setPrevented] = useState(false);
-  const { ref, on: touch } = useTarget("touchstart");
+  const { ref, on: touch, setOn: setTouch } = useTarget("touchstart");
 
   useEffect(() => {
     if (!touch) setPrevented(false);
@@ -39,6 +39,7 @@ export function Game({
           setPrevented(true);
         }
       }}
+      onTransitionEnd={(e) => e.propertyName == "transform" && setTouch(false)}
       {...props}
     >
       {children}

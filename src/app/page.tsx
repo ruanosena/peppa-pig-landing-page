@@ -22,21 +22,21 @@ export default function Home() {
         </Link>
         <nav className="hidden items-center space-x-6 text-4xl md:flex">
           <Link
-            href="#"
+            href="#Episodios"
             className="text-white transition-colors hover:text-[#ffd166] active:text-[#ffd166]"
             prefetch={false}
           >
             Episódios
           </Link>
           <Link
-            href="#"
+            href="#Jogos"
             className="text-white transition-colors hover:text-[#ffd166] active:text-[#ffd166]"
             prefetch={false}
           >
             Jogos
           </Link>
           <Link
-            href="#"
+            href="#Mercadorias"
             className="text-white transition-colors hover:text-[#ffd166] active:text-[#ffd166]"
             prefetch={false}
           >
@@ -52,7 +52,10 @@ export default function Home() {
       </header>
       <main>
         <Hero />
-        <section className="bg-[#ffd166] px-6 py-12 md:px-12 md:py-24">
+        <section
+          id="Episodios"
+          className="bg-[#ffd166] px-6 py-12 md:px-12 md:py-24"
+        >
           <div className="mx-auto max-w-xl space-y-4 text-center lg:max-w-5xl">
             <h2 className="text-3xl font-bold text-[#ff6b6b] md:text-5xl">
               Episódios
@@ -63,7 +66,7 @@ export default function Home() {
             <div className="grid gap-4 xs:grid-cols-2 lg:grid-cols-4">
               <Episode>
                 <img
-                  src="/placeholder.svg"
+                  src="/episode-1.jpg"
                   alt="Episódio 1"
                   width={200}
                   height={150}
@@ -83,7 +86,7 @@ export default function Home() {
               </Episode>
               <Episode>
                 <img
-                  src="/placeholder.svg"
+                  src="/episode-2.jpg"
                   alt="Episódio 2"
                   width={200}
                   height={150}
@@ -103,7 +106,7 @@ export default function Home() {
               </Episode>
               <Episode>
                 <img
-                  src="/placeholder.svg"
+                  src="/episode-3.jpg"
                   alt="Episódio 3"
                   width={200}
                   height={150}
@@ -145,7 +148,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="bg-[#ff6b6b] px-6 py-12 md:px-12 md:py-24">
+        <section
+          id="Jogos"
+          className="bg-[#ff6b6b] px-6 py-12 md:px-12 md:py-24"
+        >
           <div className="mx-auto max-w-xl space-y-4 text-center lg:max-w-5xl">
             <h2 className="text-3xl font-bold text-white md:text-5xl">Jogos</h2>
             <p className="text-lg text-white md:text-xl">
@@ -157,7 +163,7 @@ export default function Home() {
                 className="origin-bottom-right lg:hover:-rotate-6"
               >
                 <img
-                  src="/placeholder.svg"
+                  src="/game-1.jpg"
                   alt="Jogo 1"
                   width={200}
                   height={150}
@@ -178,7 +184,7 @@ export default function Home() {
                 className="origin-bottom-left lg:origin-bottom-right lg:hover:-rotate-3"
               >
                 <img
-                  src="/placeholder.svg"
+                  src="/game-2.jpg"
                   alt="Jogo 2"
                   width={200}
                   height={150}
@@ -199,7 +205,7 @@ export default function Home() {
                 className="origin-bottom-right lg:origin-bottom-left lg:hover:rotate-3"
               >
                 <img
-                  src="/placeholder.svg"
+                  src="/game-3.jpg"
                   alt="Jogo 3"
                   width={200}
                   height={150}
@@ -239,7 +245,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="bg-[#ffd166] px-6 py-12 md:px-12 md:py-24">
+        <section
+          id="Mercadorias"
+          className="bg-[#ffd166] px-6 py-12 md:px-12 md:py-24"
+        >
           <div className="mx-auto max-w-xl space-y-4 text-center lg:max-w-5xl">
             <h2 className="text-3xl font-bold text-[#ff6b6b] md:text-5xl">
               Mercadorias
@@ -250,7 +259,7 @@ export default function Home() {
             <div className="grid gap-4 xs:grid-cols-2 lg:grid-cols-4">
               <Merchandise className="lg:-translate-y-3 lg:skew-x-2 lg:skew-y-6">
                 <img
-                  src="/placeholder.svg"
+                  src="/merchandise-1.jpg"
                   alt="Mercadoria 1"
                   width={200}
                   height={200}
@@ -268,7 +277,7 @@ export default function Home() {
               </Merchandise>
               <Merchandise className="lg:translate-y-2 lg:skew-x-1 lg:skew-y-2">
                 <img
-                  src="/placeholder.svg"
+                  src="/merchandise-2.jpg"
                   alt="Mercadoria 2"
                   width={200}
                   height={200}
@@ -286,7 +295,7 @@ export default function Home() {
               </Merchandise>
               <Merchandise className="lg:translate-y-2 lg:-skew-x-1 lg:-skew-y-2">
                 <img
-                  src="/placeholder.svg"
+                  src="/merchandise-3.jpg"
                   alt="Mercadoria 3"
                   width={200}
                   height={200}
